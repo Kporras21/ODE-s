@@ -37,7 +37,7 @@ def RK2(function, x_0, t, N):
     return x
 
 def RK4():
-    x = 2 
+    x = 4 
     pass
 
 def f(x,t):
