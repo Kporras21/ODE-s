@@ -26,3 +26,10 @@ theme:
       primary: teal
       accent: lime
 
+plugins:
+  - mkdocstrings
+
+nav:
+  - Home: index.md
+  - API Reference: reference.md
+
