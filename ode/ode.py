@@ -6,7 +6,7 @@ import math
 def Euler(function, x_0, t, N):
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
-    Args:
+    args:
         function (callable) -- La función complementaria de la ODE
         X_0 (float) -- Valor de la función solución en el valor inicial
         t (float) -- Valor de muestreo máximo en el que se hará el cálculo
