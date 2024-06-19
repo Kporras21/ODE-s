@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: Métodos númericos para la resolución de ODE´S
 theme:
   name: material
   features:

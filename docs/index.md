@@ -1,6 +1,6 @@
-# Welcome to MkDocs
+# Diferentes métodos para resolver ecuaciones diferenciales ordinarias.
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Se analizára y explicará la implementación de los metodos númericos de Euler, Runge-Kutta de orden 2 y Runge-Kutta de orden 4 mediante codigo de Python.
 
 ## Commands
 
