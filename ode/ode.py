@@ -4,6 +4,18 @@ import math
 
 
 def Euler(function, x_0, t, N):
+    """Devuelve la solución númerica de una ODE de primer orden no homogenea
+
+    Args:
+        function (callable) -- La función complementaria de la ODE
+        X_0 (float) -- Valor de la función solución en el valor inicial
+        t (float) -- Valor de muestreo máximo en el que se hará el cálculo
+        N (int) -- cantidad de pasos entre puntos de muestreo
+
+    returns:
+        tuple: retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+
+    """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
     x = np.zeros(np.size(times))

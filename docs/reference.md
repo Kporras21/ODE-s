@@ -2,12 +2,13 @@
 
 ## Método de Euler
 
-::: src.ode.Euler
+
+::: ode.ode.Euler
 
 ## Método de Runge-Kutta de Segundo Orden (RK2)
 
-::: src.ode.RK2
+::: ode.ode.RK2
 
 ## Método de Runge-Kutta de Cuarto Orden (RK4)
 
-::: src.ode.RK4
+::: ode.ode.RK4
