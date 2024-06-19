@@ -32,7 +32,7 @@ plugins:
       handlers:
         python:
           paths: [ode]
-          site_dir: docs
+          site_dir: site
 
 nav:
   - Home: index.md
