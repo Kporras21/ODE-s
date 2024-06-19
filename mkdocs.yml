@@ -27,7 +27,12 @@ theme:
       accent: lime
 
 plugins:
-  - mkdocstrings
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [ode]
+          site_dir: docs
 
 nav:
   - Home: index.md
