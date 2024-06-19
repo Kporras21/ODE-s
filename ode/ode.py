@@ -1,16 +1,16 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-
+from typing import Tuple
 
 def Euler(function, x_0, t, N):
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
     args:
-        function (callable) -- La función complementaria de la ODE
-        X_0 (float) -- Valor de la función solución en el valor inicial
-        t (float) -- Valor de muestreo máximo en el que se hará el cálculo
-        N (int) -- cantidad de pasos entre puntos de muestreo
+        function (callable): La función complementaria de la ODE
+        x_0 (float): Valor de la función solución en el valor inicial
+        t (float): Valor de muestreo máximo en el que se hará el cálculo
+        N (int): cantidad de pasos entre puntos de muestreo
 
     returns:
         tuple: retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
