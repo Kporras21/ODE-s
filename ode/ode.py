@@ -6,14 +6,14 @@ from typing import Tuple
 def Euler(function, x_0, t, N):
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
-    args:
+    Args:
         function (callable): La función complementaria de la ODE
         x_0 (float): Valor de la función solución en el valor inicial
         t (float): Valor de muestreo máximo en el que se hará el cálculo
-        N (int): cantidad de pasos entre puntos de muestreo
+        N (int): Cantidad de pasos entre puntos de muestreo
 
-    returns:
-        tuple: retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+    Returns:
+        tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respec    tivamente.
 
     """
     times = np.linspace(0, t, N)
@@ -37,6 +37,18 @@ def RK2(function, x_0, t, N):
     return x
 
 def RK4():
+    """Devuelve la solución númerica de una ODE de primer orden no homogenea
+
+    Args:
+        function (callable): La función complementaria de la ODE
+        x_0 (float): Valor de la función solución en el valor inicial
+        t (float): Valor de muestreo máximo en el que se hará el cálculo
+        N (int): Cantidad de pasos entre puntos de muestreo
+
+    Returns:
+        float: Retorna los valores de x que son solucion de la EDO utilizando el metodo de Runge-Kutta de orden 4 
+
+    """
     def RK4(function, x_0, t, h):
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
