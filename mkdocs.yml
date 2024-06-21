@@ -33,6 +33,7 @@ plugins:
         python:
           paths: [ode]
           site_dir: docs
+  - mathjax
 
 nav:
   - Home: index.md
