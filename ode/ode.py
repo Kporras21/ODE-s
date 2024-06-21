@@ -31,7 +31,7 @@ def RK2(function, x_0, t, N):
     x[0] = x_0
 
     for i in range(len(times)-1):
-        k1 = h * function(x[i], t[i])
+        k1 = h * function(x[i], times[i])
         k2 = h * function(x[i] + k1/2, times[i] + h/2)
         x[i+1] = x[i] + k2
     return x
