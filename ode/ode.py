@@ -49,7 +49,6 @@ def RK4():
         float: Retorna los valores de x que son solucion de la EDO utilizando el metodo de Runge-Kutta de orden 4 
 
     """
-    def RK4(function, x_0, t, h):
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
     x = np.zeros(np.size(times))
