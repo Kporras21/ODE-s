@@ -12,7 +12,5 @@ Se analizára y explicará la implementación de los metodos númericos de Euler
 
 ## Método de Range-Kutta de orden 4
 
-$$
-PV = nRT
-$$
+$$ PV = NRT $$
     
