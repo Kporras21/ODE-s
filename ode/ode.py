@@ -37,8 +37,19 @@ def RK2(function, x_0, t, N):
     return x
 
 def RK4():
-    x = 4 
-    pass
+    def RK4(function, x_0, t, h):
+    times = np.linspace(0, t, N)
+    h = times[1] - times[0]
+    x = np.zeros(np.size(times))
+    x[0] = x_0
+
+    for i in range(len(times)-1):
+        k1 = h * function(x[i], times[i])
+        k2 = h * function(x[i] + k1/2, times[i] + h/2)
+        k3 = h * function(x[i] + k2/2, times[i] + h/2)
+        k4 = h * function(x[i] + k3, times[i] + h)
+        x[i+1] = x[i] + (1/6) * (k1 + 2 * k2 2 * k3 + k4)
+    return x 
 
 def f(x,t):
     return np.sin(t) - x**3
