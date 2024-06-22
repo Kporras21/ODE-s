@@ -4,7 +4,7 @@ import math
 from typing import Tuple
 
 def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
-    """Devuelve la solución númerica de una ODE de primer orden no homogenea
+    """Devuelve la solución númerica de una ODE de primer orden no homogenea utilizando el método de Euler.
 
     Example:
 
@@ -62,17 +62,41 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
         x[i+1]= x[i]+ h * function(x[i], times[i])
     return times, x
 
-def function1(x,t):
-        return np.sinh(t) - x
-times_e, x_e = Euler(function1, 0, 10, 20)
-print(x_e)
 
-plt.plot(times_e, x_e)
-plt.show()
 
 
 
 def RK2(function, x_0, t, N):
+    """Devuelve la solución númerica de una ODE de primer orden no homogenea utilizando el método de RK2.
+
+    Example:
+
+        >>> import numpy as np
+        >>> import math
+        >>> def function1(x,t):
+                return np.sinh(t) - x
+        >>> result3 = Euler(function1, x = 0, t = 10, N = 20)
+        >>> print(result2)
+        [0.00000000e+00 1.40108316e-01 4.69503675e-01 1.02355156e+00
+        1.92379318e+00 3.40367390e+00 5.86937546e+00 1.00116836e+01
+        1.69997981e+01 2.88115312e+01 4.87931927e+01 8.26076821e+01
+        1.39839426e+02 2.36711025e+02 4.00681647e+02 6.78230589e+02
+        1.14803236e+03 1.94325791e+03 3.28932352e+03 5.56778776e+03]
+
+
+    Args:
+        function (callable): La función complementaria de la ODE
+        x_0 (float): Valor de la función solución en el valor inicial
+        t (float): Valor de muestreo máximo en el que se hará el cálculo
+        N (int): Cantidad de pasos entre puntos de muestreo
+
+    Returns:
+        times_X (Tuple): Retorna un times, x donde times y x son arrays de la variable independiente y dependiente respectivamente.
+
+
+
+
+    """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
     x = np.zeros(np.size(times))
@@ -82,10 +106,10 @@ def RK2(function, x_0, t, N):
         k1 = h * function(x[i], times[i])
         k2 = h * function(x[i] + k1/2, times[i] + h/2)
         x[i+1] = x[i] + k2
-    return x
+    return times, x
 
 def RK4(function, x_0, t, N):
-    """Devuelve la solución númerica de una ODE de primer orden no homogenea
+    """Devuelve la solución númerica de una ODE de primer orden no homogenea utilizando el método de RK4.
 
     Example:
 
@@ -130,7 +154,7 @@ def RK4(function, x_0, t, N):
         N (int): Cantidad de pasos entre puntos de muestreo
 
     Returns:
-        (times, x) tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+        times_x tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
@@ -145,3 +169,11 @@ def RK4(function, x_0, t, N):
         x[i+1] = x[i] + (1/6) * (k1 + 2 * k2 + 2  * k3 + k4) 
     return times, x
 
+
+def function1(x,t):
+        return np.sinh(t) - x
+times_e, x_e = RK2(function1, 0, 10, 20)
+print(x_e)
+
+plt.plot(times_e, x_e)
+plt.show()
