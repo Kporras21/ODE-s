@@ -42,7 +42,6 @@ plugins:
         python:
           paths: [ode]
           site_dir: docs
-  - mknotebooks
 
 
 
