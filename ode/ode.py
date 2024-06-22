@@ -18,14 +18,12 @@ def Euler(function, x_0, t, N):
     Example:
         >>> import numpy as np
         >>> import matplotlib.pyplot as plt
-
         >>> def f(x,t):
-            return np.sin(t) - x**3
+        ...     return np.sin(t) - x**3
        
         >>> tiempo_euler, Euler_example = Euler(f, x_0 = 0, t = 10, N = 100)
         >>> plt.plot(tiempo_euler, Euler_example)
         >>> plt.show()
-
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
