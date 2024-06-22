@@ -15,14 +15,48 @@ def Euler(function, x_0, t, N):
     Returns:
         tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
 
+
+Para asegurarte de que el ejemplo en tu docstring se muestre correctamente como código en la documentación generada con MkDocs y mkdocstrings, puedes intentar los siguientes pasos:
+
+1. Revisar la Docstring
+Primero, revisa que la docstring de tu función esté correctamente formateada con la indentación adecuada y los bloques de código encerrados en triple comillas ("""). Aquí hay una versión corregida de tu función Euler:
+
+python
+Copy code
+# ode.py
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def Euler(function, x_0, t, N):
+    """
+    Devuelve la solución númerica de una ODE de primer orden no homogenea.
+
+    Args:
+        function (callable): La función complementaria de la ODE.
+        x_0 (float): Valor de la función solución en el valor inicial.
+        t (float): Valor de muestreo máximo en el que se hará el cálculo.
+        N (int): Cantidad de pasos entre puntos de muestreo.
+
+    Returns:
+        tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+
     Example:
-        >>> import numpy as np
-        >>> import matplotlib.pyplot as plt
-        >>> def f(x,t):
-        ...     return np.sin(t) - x**3
-        >>> tiempo_euler, Euler_example = Euler(f, x_0 = 0, t = 10, N = 100)
-        >>> plt.plot(tiempo_euler, Euler_example)
-        >>> plt.show()
+        ```python
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        def f(x, t):
+            return np.sin(t) - x**3
+
+        tiempo_euler, Euler_example = Euler(f, x_0=0, t=10, N=100)
+        plt.plot(tiempo_euler, Euler_example)
+        plt.xlabel('Tiempo')
+        plt.ylabel('Solución')
+        plt.title('Ejemplo de solución ODE con método de Euler')
+        plt.grid(True)
+        plt.show()
+        ```
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
