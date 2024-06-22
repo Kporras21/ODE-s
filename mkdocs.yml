@@ -42,9 +42,7 @@ plugins:
         python:
           paths: [ode]
           site_dir: docs
-  - mknotebooks:
-      execute: true
-      timeout: 100
+
 
 
 nav:
