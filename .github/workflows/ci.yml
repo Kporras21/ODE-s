@@ -28,7 +28,6 @@ jobs:
       - run: pip install jupyter
       - run: pip install mkdocstrings[python]
       - run: pip install mkdocs-material 
-      - run: pip install mknotebooks
       - run: pip install --upgrade pip
       - run: mkdocs gh-deploy --force
       

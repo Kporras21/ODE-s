@@ -8,6 +8,16 @@ nav_exclude: true
 
 ::: ode.Euler
 
+```python
+# Definición de la función saludo
+def saludo(nombre):
+    print(f"Hola, {nombre}!")
+
+# Llamada a la función saludo
+saludo("Mundo")
+```
+
+
  Método de Runge-Kutta de Segundo Orden (RK2) 
 
 ::: ode.RK2
