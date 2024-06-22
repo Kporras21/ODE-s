@@ -14,13 +14,14 @@ def Euler(function, x_0, t, N):
 
     Returns:
         tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+
     Example:
         >>> import numpy as np
         >>> import matplotlib.pyplot as plt
-        Se define una función cualquiera que dependa de la variable dependiente y de la variable independiente.
+
         >>> def f(x,t):
             return np.sin(t) - x**3
-        Al introducirla a nuestra función, junto con los parametros deseados, está devuelve la tupla de arrays, lo cual luego podemos plotear.
+       
         >>> tiempo_euler, Euler_example = Euler(f, x_0 = 0, t = 10, N = 100)
         >>> plt.plot(tiempo_euler, Euler_example)
         >>> plt.show()
