@@ -19,8 +19,8 @@ $$
 El error dependerá del número de pasos utilizados y, por lo tanto, de $h$. Se representa de la siguiente manera:  
 
 $$
-\sum\epsilon = \sum_{k=0}^{N-1}\frac{h^2}{2}\left. \frac{d^2x}{dt^2} \right|_{x_k, t_k} = \frac{h}{2}\sum_{k=0}^{N-1}h\left.\frac{df}{dt}\right|_{x_k, t_k}\\
-\approx \frac{h}2\int_a^b\frac{df}{dt}d t = \frac{h}{2}\left[f_b - f_a\right].
+\sum\epsilon = \sum_{k=0}^{N-1}\frac{h^2}{2}\left. \frac{d^2x}{dt^2} \right|\_{x\_k, t\_k} = \frac{h}{2}\sum_{k=0}^{N-1}h\left.\frac{df}{dt}\right|\_{x\_k, t\_k}\\
+\approx \frac{h}2\int\_a^b\frac{df}{dt}d t = \frac{h}{2}\left[f\_b - f\_a\right].
 $$
 
 donde $N = (b-a)/h$ (cantidad de pasos). 
