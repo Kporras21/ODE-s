@@ -43,6 +43,10 @@ plugins:
           paths: [ode]
           site_dir: docs
   - mknotebooks
+      execute: false
+      timeout: 100
+      preamble:  "<path/to/your/script>"
+      allow_errors: false
 
 
 nav:
