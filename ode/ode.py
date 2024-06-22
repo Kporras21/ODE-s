@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-from typing import Tuple
+from typing import tuple
 
 def Euler(function, x_0, t, N):
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
@@ -54,11 +54,7 @@ def RK4(function, x_0, t, N):
         N (int): Cantidad de pasos entre puntos de muestreo
 
     Returns:
-        float: Retorna los valores de x que son solucion de la EDO utilizando el metodo de Runge-Kutta de orden 4 
-
-
-
-
+        (times, x) tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
@@ -71,7 +67,7 @@ def RK4(function, x_0, t, N):
         k3 = h * function(x[i] + k2/2, times[i] + h/2)
         k4 = h * function(x[i] + k3, times[i] + h)
         x[i+1] = x[i] + (1/6) * ( k1 + 2 * k2  * k3 + k4) 
-    return x 
+    return times, x
 
 def f(x,t):
     return np.sin(t) - x**3
