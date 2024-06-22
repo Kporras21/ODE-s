@@ -6,7 +6,40 @@ from typing import Tuple
 def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
-    Examples:
+    Example:
+        >>> import numpy as np
+        >>> import math
+        >>> def function1(x,t):
+                return np.sin(t) - x**3
+        >>> result1 = Euler(function2, 0, 10, 20)
+        >>> print(result1)
+        [ 0.        ,  0.        ,  0.26439534,  0.71189381,  1.04830651,
+        0.89488942,  0.77464602,  0.52141013,  0.17502349, -0.28921312,
+       -0.80263945, -0.97897518, -0.73458315, -0.50879969, -0.16038526,
+        0.30726691,  0.81787725,  0.97386719,  0.72957635,  0.49945695]
+
+        >>> import numpy as np
+        >>> import math
+        >>> def function2(x,t):
+                return np.cos(t) - np.exp(x)
+        >>> result2 = Euler(function2, 0, 10, 20)
+        >>> print(result2)
+        [ 0.          0.         -0.07122963 -0.30068299 -0.69461108 -1.22547997
+        -1.83935079 -2.44923905 -2.94540698 -3.22627014 -3.23429889 -2.97958585
+        -2.54286684 -2.05822057 -1.67919565 -1.53173235 -1.6669454  -2.0490437
+        -2.5843312  -3.14972638]
+
+        >>> import numpy as np
+        >>> import math
+        >>> def function3(x,t):
+                return np.sinh(t) - x
+        >>> result3 = Euler(function3, 0, 10, 20)
+        >>> print(result2)
+        [0.00000000e+00 0.00000000e+00 2.89975549e-01 7.99505019e-01
+        1.60072764e+00 2.88651558e+00 5.00512012e+00 8.54940181e+00
+        1.45203906e+01 2.46089117e+01 4.16738619e+01 7.05521213e+01
+        1.19429399e+02 2.02160465e+02 3.42196400e+02 5.79232069e+02
+        9.80458092e+02 1.65960684e+03 2.80919126e+03 4.75507497e+03]
 
 
     Args:
@@ -27,6 +60,16 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
     for i in range(len(times)-1):
         x[i+1]= x[i]+ h * function(x[i], times[i])
     return times, x
+
+def function1(x,t):
+        return np.sinh(t) - x
+times_e, x_e = Euler(function1, 0, 10, 20)
+print(x_e)
+
+plt.plot(times_e, x_e)
+plt.show()
+
+
 
 def RK2(function, x_0, t, N):
     times = np.linspace(0, t, N)
@@ -49,7 +92,7 @@ def RK4(function, x_0, t, N):
         >>> import math
         >>> def function1(x,t):
                 return np.sin(t) - x**3
-        >>> result1 = RK4(function2, 0, 10, 20)
+        >>> result1 = RK4(function1, 0, 10, 20)
         >>> print(result1)
         [ 0.          0.13505937  0.48487586  0.81979626  0.93102462  0.88144889
         0.72370945  0.46026479  0.06848691 -0.42773679 -0.78084333 -0.83096351
@@ -66,7 +109,7 @@ def RK4(function, x_0, t, N):
         26.56420785 30.23188487 33.7115182  37.01274893 40.14472385 43.1161208
         45.93517269 48.60969034 51.14708409 53.55438434 55.83826107 58.00504226
         60.06073146 62.01102441]
-        
+
         >>> def rc_circuit_function(Q, t):
                 V = 10.0     
                 R = 1.0      
@@ -101,10 +144,3 @@ def RK4(function, x_0, t, N):
         x[i+1] = x[i] + (1/6) * (k1 + 2 * k2 + 2  * k3 + k4) 
     return times, x
 
-def f(x,t):
-    return np.sin(t) - x**3
-
-tiempo_euler, Euler_example = Euler(f, 0, 10, 100)
-
-plt.plot(tiempo_euler, Euler_example)
-plt.show()
