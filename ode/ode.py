@@ -7,6 +7,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
     Example:
+
         >>> import numpy as np
         >>> import math
         >>> def function1(x,t):
@@ -87,6 +88,7 @@ def RK4(function, x_0, t, N):
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
     Example:
+    
         >>> import numpy as np
         >>> import math
         >>> def function1(x,t):
