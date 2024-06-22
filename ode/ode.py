@@ -15,22 +15,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
     Returns:
         times_X (Tuple): Retorna un times, x donde times y x son arrays de la variable independiente y dependiente respectivamente.
 
-    Example:
-        ```python
-        import numpy as np
-        import matplotlib.pyplot as plt
 
-        def f(x, t):
-            return np.sin(t) - x**3
-
-        tiempo_euler, Euler_example = Euler(f, x_0=0, t=10, N=100)
-        plt.plot(tiempo_euler, Euler_example)
-        plt.xlabel('Tiempo')
-        plt.ylabel('Solución')
-        plt.title('Ejemplo de solución ODE con método de Euler')
-        plt.grid(True)
-        plt.show()
-        ```
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
