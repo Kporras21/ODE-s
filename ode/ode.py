@@ -13,7 +13,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
         N (int): Cantidad de pasos entre puntos de muestreo
 
     Returns:
-        Tuple[np.ndarray, np.ndarray]: Retorna una tupla (times, x) donde `times` es un array de los valores de la variable independiente y `x` es un array de los valores de la variable dependiente.
+        times_X (Tuple): Retorna un times, x donde times y x son arrays de la variable independiente y dependiente respectivamente.
 
     Example:
         ```python
