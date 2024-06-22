@@ -48,6 +48,16 @@ def RK4(function, x_0, t, N):
     Returns:
         float: Retorna los valores de x que son solucion de la EDO utilizando el metodo de Runge-Kutta de orden 4 
 
+    Example:
+        Se define una función cualquiera que dependa de la variable dependiente y de la variable independiente.
+        def f(x,t):
+            return np.sin(t) - x**3
+        Al introducirla a nuestra función, junto con los parametros deseados, está devuelve la tupla de arrays, lo cual luego podemos plotear.
+        tiempo_euler, Euler_example = Euler(f, x_0 = 0, t = 10, N = 100)
+        plt.plot(tiempo_euler, Euler_example)
+        plt.show()
+
+
     """
     times = np.linspace(0, t, N)
     h = times[1] - times[0]
