@@ -42,7 +42,7 @@ plugins:
         python:
           paths: [ode]
           site_dir: docs
-  - mknotebooks
+  - mknotebooks:
       execute: false
       timeout: 100
       preamble:  "<path/to/your/script>"
