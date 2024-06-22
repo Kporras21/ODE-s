@@ -12,17 +12,6 @@ nav_exclude: true
 import numpy as np
 import matplotlib.pyplot as plt
 
-def Euler(function, x_0, t, N):
-
-    times = np.linspace(0, t, N)
-    h = times[1] - times[0]
-    x = np.zeros(np.size(times))
-    x[0] = x_0
-    for i in range(len(times)-1):
-        x[i+1] = x[i] + h * function(x[i], times[i])
-    return times, x
-
-# Ejemplo de uso de la función Euler
 def f(x, t):
     return np.sin(t) - x**3
 
