@@ -11,7 +11,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
         >>> import math
         >>> def function1(x,t):
                 return np.sin(t) - x**3
-        >>> result1 = Euler(function2, 0, 10, 20)
+        >>> result1 = Euler(function2, x_0 = 0, t = 10, N = 20)
         >>> print(result1)
         [ 0.        ,  0.        ,  0.26439534,  0.71189381,  1.04830651,
         0.89488942,  0.77464602,  0.52141013,  0.17502349, -0.28921312,
@@ -22,7 +22,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
         >>> import math
         >>> def function2(x,t):
                 return np.cos(t) - np.exp(x)
-        >>> result2 = Euler(function2, 0, 10, 20)
+        >>> result2 = Euler(function2, x_0 = 0, t = 10, N = 20)
         >>> print(result2)
         [ 0.          0.         -0.07122963 -0.30068299 -0.69461108 -1.22547997
         -1.83935079 -2.44923905 -2.94540698 -3.22627014 -3.23429889 -2.97958585
@@ -33,7 +33,7 @@ def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
         >>> import math
         >>> def function3(x,t):
                 return np.sinh(t) - x
-        >>> result3 = Euler(function3, 0, 10, 20)
+        >>> result3 = Euler(function3, x = 0, t = 10, N = 20)
         >>> print(result2)
         [0.00000000e+00 0.00000000e+00 2.89975549e-01 7.99505019e-01
         1.60072764e+00 2.88651558e+00 5.00512012e+00 8.54940181e+00
@@ -92,7 +92,7 @@ def RK4(function, x_0, t, N):
         >>> import math
         >>> def function1(x,t):
                 return np.sin(t) - x**3
-        >>> result1 = RK4(function1, 0, 10, 20)
+        >>> result1 = RK4(function1, x_0 = 0, t = 10, N = 20)
         >>> print(result1)
         [ 0.          0.13505937  0.48487586  0.81979626  0.93102462  0.88144889
         0.72370945  0.46026479  0.06848691 -0.42773679 -0.78084333 -0.83096351
@@ -103,7 +103,7 @@ def RK4(function, x_0, t, N):
                 k = 0.1       
                 m = 1.0       
                 return 9.8 - (k / m) * v
-        >>> result2 = RK4(function_falling, 0, 10, 20)
+        >>> result2 = RK4(function_falling, x_0 = 0, t = 10, N = 20)
         >>> print(result2)
         [ 0.          5.02963768  9.80140324 14.32851792 18.62352509 22.69832502
         26.56420785 30.23188487 33.7115182  37.01274893 40.14472385 43.1161208
@@ -115,7 +115,7 @@ def RK4(function, x_0, t, N):
                 R = 1.0      
                 C = 1.0      
                 return (V - Q / C) / R
-        >>> result3 = RK4(rc_circuit_function, 0, 10, 20)
+        >>> result3 = RK4(rc_circuit_function, x = 0, t = 10, N = 20)
         >>> print(result3)
         [0.         4.08913375 6.50616602 7.93484147 8.77931241 9.2784679
         9.57351202 9.74790866 9.85099218 9.91192347 9.94793914 9.96922752
