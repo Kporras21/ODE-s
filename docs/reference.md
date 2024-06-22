@@ -8,6 +8,8 @@ nav_exclude: true
 
 ::: ode.Euler
 
+
+
  Método de Runge-Kutta de Segundo Orden (RK2) 
 
 ::: ode.RK2

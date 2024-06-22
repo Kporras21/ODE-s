@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-from typing import tuple
+from typing import Tuple
 
-def Euler(function, x_0, t, N):
+def Euler(function, x_0, t, N) -> Tuple[np.ndarray, np.ndarray]:
     """Devuelve la solución númerica de una ODE de primer orden no homogenea
 
     Args:
@@ -13,7 +13,7 @@ def Euler(function, x_0, t, N):
         N (int): Cantidad de pasos entre puntos de muestreo
 
     Returns:
-        tuple: Retorna una tupla (times, x) donde times y x son arrays de la variable independiente y dependiente respectivamente.
+        Tuple[np.ndarray, np.ndarray]: Retorna una tupla (times, x) donde `times` es un array de los valores de la variable independiente y `x` es un array de los valores de la variable dependiente.
 
     Example:
         ```python

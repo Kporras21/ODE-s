@@ -25,6 +25,7 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
+      - run: pip install jupyter
       - run: pip install mkdocstrings[python]
       - run: pip install mkdocs-material 
       - run: pip install mknotebooks
