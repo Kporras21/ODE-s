@@ -32,7 +32,44 @@ donde $N = (b-a)/h$ (cantidad de pasos).
 
 ## Metodo de Range-Kutta de orden 2 
 
+Este método utiliza el método de Euler evaluado en un punto medio. Es decir, se utiliza el punto medio $t + h/2$. 
 
+Aplicando la expansión de Taylor en dicho punto se obtiene: 
+
+$$
+x(t + h) = x\left(t + \frac{h}{2}\right) + \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)\_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)\_{t+h/2} + O(h^3).
+$$
+
+Haciendo lo mismo para $x(t)$ se obtiene: 
+
+$$
+x(t) = x\left(t + \frac{h}{2}\right) - \frac{h}{2}\left(\frac{{\rm d}x}{{\rm d}t}\right)\_{t+h/2} + \frac{h^2}{8}\left(\frac{{\rm d}^2x}{{\rm d}t^2}\right)\_{t+h/2} + O(h^3).
+$$
+
+Al sustraer ambas ecuaciones obtenemos
+
+$$
+x(t + h) = x(t) + h\left(\frac{{\rm d}x}{{\rm d}t}\right)_{t+h/2} + O(h^3)
+$$
+
+Finalmente,
+
+$$
+\boxed{x(t + h) = x(t) + hf[x(t + h/2), t + h/2] + O(h^3)}.
+$$
+
+por lo tanto, el error es de de orden $h^3$.
+
+
+Para aproximar el valor de $x(t + h/2)$ se utiliza el método de Euler con un paso $h/2$, $(x + h/2) = x(t) + \frac{h}{2}f(x,t)$. 
+
+
+De esta manera, obtenemos las ecuaciones del método RK2:
+* $k\_1 = hf(x,t),$
+* $k\_2 = hf\left(x + \frac{k\_1}{2},t + \frac{h}{2}\right)$
+* $x(t + h) = x(t) + k\_2$.
+
+De esta forma, el error global es de orden $O(h^2)$. 
 
 ## Método de Range-Kutta de orden 4
 
